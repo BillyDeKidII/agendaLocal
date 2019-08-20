@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Teste 
+public class Documentacao 
 {
     public static void main(String[] args) throws IOException
     {

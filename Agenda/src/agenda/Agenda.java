@@ -40,10 +40,8 @@ public class Agenda {
                     numero = leituraCase1.nextLine();
                     gravar.printf(nome);
                     gravar.printf(",");
-                    gravar.printf(numero);
+                    gravar.println(numero);
                     bw.newLine();
-                    lista.close();
-                    gravar.close();
                     break;
                 case 2:
                     System.out.println("Ainda não implementado! Escolha outra opção");
@@ -53,6 +51,8 @@ public class Agenda {
                     break;
                 case 0:
                     System.out.println("Saindo do sistema");
+                    lista.close();
+                    gravar.close();
                     break;
             }
         } while (escolha != 0);
