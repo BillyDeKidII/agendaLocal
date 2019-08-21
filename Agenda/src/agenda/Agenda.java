@@ -29,6 +29,7 @@ public class Agenda {
             System.out.println("1 - Adicionar novo contato");
             System.out.println("2 - Buscar contato");
             System.out.println("3 - Carregar lista de contato");
+            System.out.println("4 - Printando Nomes");
             System.out.println("0 - Sair do Menu");
             escolha = leitura.nextInt();
             switch (escolha) {
@@ -48,6 +49,15 @@ public class Agenda {
                     break;
                 case 3:
                     System.out.println("Ainda não implementado! Escolha outra opção");
+                    break;
+                case 4:
+                    lista.close();
+                    gravar.close();
+                    String linha = null;
+                    while((linha = br.readLine()) != null)
+                    {
+                        System.out.println(linha);
+                    }
                     break;
                 case 0:
                     System.out.println("Saindo do sistema");

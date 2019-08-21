@@ -12,6 +12,7 @@ public class Documentacao
     {
         File arquivo = new File("C:/geraArquivo/teste.txt");//instancia um objeto
         boolean existe = arquivo.exists();//verifica se existe
+        arquivo.mkdir();//cria o diretorio
         arquivo.createNewFile();//cria o arquivo
         File [] arquivos = arquivo.listFiles();//lista os arquivos do diretorio
         arquivo.delete();//deleta o arquivo
