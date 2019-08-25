@@ -2,70 +2,113 @@ package agenda;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
-import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.Scanner;
 
-/**
- * @author Thiago Romão
- */
 public class Agenda {
 
     public static void main(String[] args) throws IOException {
         Scanner leitura = new Scanner(System.in);
-        String nome;
-        String numero;
-        FileWriter lista = new FileWriter("C:/geraArquivo/lista.txt");
-        PrintWriter gravar = new PrintWriter(lista, true);
-        FileReader leitor = new FileReader("C:/geraArquivo/lista.txt");
-        BufferedReader br = new BufferedReader(leitor);
-        BufferedWriter bw = new BufferedWriter(gravar);
         int escolha = 1;
         do {
-            System.out.println("1 - Adicionar novo contato");
-            System.out.println("2 - Buscar contato");
-            System.out.println("3 - Carregar lista de contato");
-            System.out.println("4 - Printando Nomes");
-            System.out.println("0 - Sair do Menu");
+            System.out.println("1 - Insira um contato");
+            System.out.println("2 - Exclua um contato");
+            System.out.println("3 - Busque um contato");
+            System.out.println("4 - Liste todos contatos");
+            System.out.println("0 - Encerrar aplicação");
             escolha = leitura.nextInt();
             switch (escolha) {
                 case 1:
+                    File arquivo = new File("C:/geraArquivo/Lista.txt");
+                    HashMap<String, String> leituraInicial = new HashMap<>();
+                    if (!arquivo.exists()) {
+
+                        arquivo.createNewFile();
+                    } else {
+                        FileReader leitorArquivo = new FileReader(arquivo);
+                        BufferedReader caminhadorArquivo = new BufferedReader(leitorArquivo);
+                        while (caminhadorArquivo.ready()) {
+                            String linha = caminhadorArquivo.readLine();
+                            String[] textoSeparado = linha.split(",");
+                            leituraInicial.put(textoSeparado[0], textoSeparado[1]);
+                        }
+                    }
+                    File[] arquivos = arquivo.listFiles();
+                    FileWriter leitor1 = new FileWriter(arquivo);
+                    BufferedWriter escrita1 = new BufferedWriter(leitor1);
                     Scanner leituraCase1 = new Scanner(System.in);
                     System.out.printf("Diga seu nome \n");
-                    nome = leituraCase1.nextLine();
+                    String nome = leituraCase1.nextLine();
                     System.out.printf("Diga seu numero \n");
-                    numero = leituraCase1.nextLine();
-                    gravar.printf(nome);
-                    gravar.printf(",");
-                    gravar.println(numero);
-                    bw.newLine();
+                    String numero = leituraCase1.nextLine();
+                    escrita1.write(nome);
+                    escrita1.write(",");
+                    escrita1.write(numero);
+                    escrita1.newLine();
+                    for (String i : leituraInicial.keySet()) {
+                        escrita1.write(i);
+                        escrita1.write(",");
+                        escrita1.write(leituraInicial.get(i));
+                        escrita1.newLine();
+                    }
+                    escrita1.close();
+                    leitor1.close();
                     break;
                 case 2:
-                    System.out.println("Ainda não implementado! Escolha outra opção");
+                    arquivo = new File("C:/geraArquivo/Lista.txt");
+                    HashMap<String, String> listaExcluido = new HashMap<>();
+                    if (!arquivo.exists()) {
+
+                        arquivo.createNewFile();
+                    } else {
+                        FileReader leitorArquivo = new FileReader(arquivo);
+                        BufferedReader caminhadorArquivo = new BufferedReader(leitorArquivo);
+                        while (caminhadorArquivo.ready()) {
+                            String linha = caminhadorArquivo.readLine();
+                            String[] textoSeparado = linha.split(",");
+                            listaExcluido.put(textoSeparado[0], textoSeparado[1]);
+                        }
+                    }
+                    leitor1 = new FileWriter(arquivo);
+                    escrita1 = new BufferedWriter(leitor1);
+                    Scanner leituraCase2 = new Scanner(System.in);
+                    System.out.println("Digite o nome para ser excluido \n");
+                    String excluido = leituraCase2.nextLine();
+                    listaExcluido.remove(excluido);
+                    for (String i : listaExcluido.keySet()) {
+                        escrita1.write(i);
+                        escrita1.write(",");
+                        escrita1.write(listaExcluido.get(i));
+                        escrita1.newLine();
+                    }
+                    escrita1.close();
+                    leitor1.close();
                     break;
                 case 3:
-                    System.out.println("Ainda não implementado! Escolha outra opção");
+                    System.out.println("Ainda não implementado! Escolha outra opção!");
                     break;
                 case 4:
-                    lista.close();
-                    gravar.close();
-                    String linha = null;
-                    while((linha = br.readLine()) != null)
-                    {
-                        System.out.println(linha);
+                    arquivo = new File("C:/geraArquivo/Lista.txt");
+                    if (!arquivo.exists()) {
+                        System.out.println("Arquivo não existe meu companheiro! Execute a função 1 para gera um arquivo!");
+                    } else {
+                        FileReader leitorArquivo = new FileReader(arquivo);
+                        BufferedReader caminhadorArquivo = new BufferedReader(leitorArquivo);
+                        while (caminhadorArquivo.ready()) {
+                            String linha = caminhadorArquivo.readLine();
+                            System.out.println(linha);
+                        }
                     }
                     break;
                 case 0:
-                    System.out.println("Saindo do sistema");
-                    lista.close();
-                    gravar.close();
-                    break;
+                    System.out.println("Saindo do sistema!Adeus");
             }
         } while (escolha != 0);
 
     }
+
 }
