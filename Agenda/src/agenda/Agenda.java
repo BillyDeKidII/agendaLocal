@@ -89,7 +89,35 @@ public class Agenda {
                     leitor1.close();
                     break;
                 case 3:
-                    System.out.println("Ainda não implementado! Escolha outra opção!");
+                    arquivo = new File("C:/geraArquivo/Lista.txt");
+                    HashMap<String, String> listando = new HashMap<>();
+                    if (!arquivo.exists()) {
+
+                        arquivo.createNewFile();
+                    } else {
+                        FileReader leitorArquivo = new FileReader(arquivo);
+                        BufferedReader caminhadorArquivo = new BufferedReader(leitorArquivo);
+                        while (caminhadorArquivo.ready()) {
+                            String linha = caminhadorArquivo.readLine();
+                            String[] textoSeparado = linha.split(",");
+                            listando.put(textoSeparado[0], textoSeparado[1]);
+                        }
+                    }
+                    leitor1 = new FileWriter(arquivo);
+                    escrita1 = new BufferedWriter(leitor1);
+                    Scanner leituraCase3 = new Scanner(System.in);
+                    System.out.println("Digite o nome para ser buscado \n");
+                    String buscado = leituraCase3.nextLine();
+                    System.out.println(buscado + "," + listando.get(buscado));
+                    //System.out.println(listando.get(buscado));
+                    for (String i : listando.keySet()) {
+                        escrita1.write(i);
+                        escrita1.write(",");
+                        escrita1.write(listando.get(i));
+                        escrita1.newLine();
+                    }
+                    escrita1.close();
+                    leitor1.close();
                     break;
                 case 4:
                     arquivo = new File("C:/geraArquivo/Lista.txt");
