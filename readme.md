@@ -67,3 +67,7 @@ Agradeço muito a meu esforço próprio e ao W3Schools que ajudou nos métodos.
 Pode usar a vontade minha agenda desde que deixe meu nome no final ta top.(PAF-ECF, Thiago Romão).
 
 PAF-ECF [Thiago Romão]()
+
+**TCHAU**
+
+![](Screens/cat.gif)

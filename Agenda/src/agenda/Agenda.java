@@ -36,6 +36,7 @@ public class Agenda {
                             String[] textoSeparado = linha.split(",");
                             leituraInicial.put(textoSeparado[0], textoSeparado[1]);
                         }
+                        leitorArquivo.close();
                     }
                     File[] arquivos = arquivo.listFiles();
                     FileWriter leitor1 = new FileWriter(arquivo);
@@ -72,6 +73,7 @@ public class Agenda {
                             String[] textoSeparado = linha.split(",");
                             listaExcluido.put(textoSeparado[0], textoSeparado[1]);
                         }
+                        leitorArquivo.close();
                     }
                     leitor1 = new FileWriter(arquivo);
                     escrita1 = new BufferedWriter(leitor1);
@@ -102,6 +104,7 @@ public class Agenda {
                             String[] textoSeparado = linha.split(",");
                             listando.put(textoSeparado[0], textoSeparado[1]);
                         }
+                        leitorArquivo.close();
                     }
                     leitor1 = new FileWriter(arquivo);
                     escrita1 = new BufferedWriter(leitor1);
@@ -130,6 +133,7 @@ public class Agenda {
                             String linha = caminhadorArquivo.readLine();
                             System.out.println(linha);
                         }
+                        leitorArquivo.close();
                     }
                     break;
                 case 0:
