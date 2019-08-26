@@ -23,7 +23,7 @@ public class Agenda {
             escolha = leitura.nextInt();
             switch (escolha) {
                 case 1:
-                    File arquivo = new File("C:/geraArquivo/Lista.txt");
+                    File arquivo = new File("Lista.txt");
                     HashMap<String, String> leituraInicial = new HashMap<>();
                     if (!arquivo.exists()) {
 
@@ -59,7 +59,7 @@ public class Agenda {
                     leitor1.close();
                     break;
                 case 2:
-                    arquivo = new File("C:/geraArquivo/Lista.txt");
+                    arquivo = new File("Lista.txt");
                     HashMap<String, String> listaExcluido = new HashMap<>();
                     if (!arquivo.exists()) {
 
@@ -89,7 +89,7 @@ public class Agenda {
                     leitor1.close();
                     break;
                 case 3:
-                    arquivo = new File("C:/geraArquivo/Lista.txt");
+                    arquivo = new File("Lista.txt");
                     HashMap<String, String> listando = new HashMap<>();
                     if (!arquivo.exists()) {
 
@@ -120,7 +120,7 @@ public class Agenda {
                     leitor1.close();
                     break;
                 case 4:
-                    arquivo = new File("C:/geraArquivo/Lista.txt");
+                    arquivo = new File("Lista.txt");
                     if (!arquivo.exists()) {
                         System.out.println("Arquivo não existe meu companheiro! Execute a função 1 para gera um arquivo!");
                     } else {
