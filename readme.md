@@ -15,15 +15,15 @@ Vale provavelmente muita nota, acredito que seja a melhor motivação para um tr
 
 **Caso de Uso**
 
-![](Documentação/diagramaCasodeUso.PNG)
+![](Documentação/diagramaCasodeUso.png)
 
 **Diagrama de Classe**
 
-![](Documentação/diagramaClasse.PNG)
+![](Documentação/diagramaClasse.png)
 
 **Diagrama de Sequência**
 
-![](Documentação/diagramaSequência.PNG)
+![](Documentação/diagramaSequência.png)
 
 ## Screenshots
 Print das funcionalidades pelo CMD.
