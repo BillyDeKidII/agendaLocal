@@ -59,6 +59,8 @@ Caso o Mario não esteja satisfeito apenas com essa agenda, teremos atualizaçõ
 
 ## Instalação
 Roda o .jar no cmd que ta top.
+Abre seu cmd e coloca isso java -jar "C:\"pastacriada"\Agenda.jar";
+"pasta criada" é o seu nome de pasta;
 
 ## Creditos
 Agradeço muito a meu esforço próprio e ao W3Schools que ajudou nos métodos. 
