@@ -19,7 +19,7 @@ public class Agenda {
             System.out.println("2 - Exclua um contato");
             System.out.println("3 - Busque um contato");
             System.out.println("4 - Liste todos contatos");
-            System.out.println("0 - Encerrar aplicação");
+            System.out.println("0 - Encerrar aplicativo");
             escolha = leitura.nextInt();
             switch (escolha) {
                 case 1:
@@ -63,7 +63,7 @@ public class Agenda {
                     HashMap<String, String> listaExcluido = new HashMap<>();
                     if (!arquivo.exists()) {
 
-                        arquivo.createNewFile();
+                        System.out.println("Arquivo nao existe meu companheiro! Execute a funcao 1 para gera um arquivo!");
                     } else {
                         FileReader leitorArquivo = new FileReader(arquivo);
                         BufferedReader caminhadorArquivo = new BufferedReader(leitorArquivo);
@@ -93,7 +93,7 @@ public class Agenda {
                     HashMap<String, String> listando = new HashMap<>();
                     if (!arquivo.exists()) {
 
-                        arquivo.createNewFile();
+                        System.out.println("Arquivo nao existe meu companheiro! Execute a funcao 1 para gera um arquivo!");
                     } else {
                         FileReader leitorArquivo = new FileReader(arquivo);
                         BufferedReader caminhadorArquivo = new BufferedReader(leitorArquivo);
@@ -122,7 +122,7 @@ public class Agenda {
                 case 4:
                     arquivo = new File("Lista.txt");
                     if (!arquivo.exists()) {
-                        System.out.println("Arquivo não existe meu companheiro! Execute a função 1 para gera um arquivo!");
+                        System.out.println("Arquivo nao existe meu companheiro! Execute a funcao 1 para gera um arquivo!");
                     } else {
                         FileReader leitorArquivo = new FileReader(arquivo);
                         BufferedReader caminhadorArquivo = new BufferedReader(leitorArquivo);
